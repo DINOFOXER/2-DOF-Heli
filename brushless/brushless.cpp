@@ -3,8 +3,8 @@
 
 using namespace std;
 
-int main{
-	gpioInitialize();
+int main() {
+	gpioInitialise();
 	gpioSetMode(17, PI_OUTPUT);
 	
 	cout << "Ligando motor..." << endl;
@@ -17,7 +17,7 @@ int main{
 	
 	cout << "Desligando motor...." << endl;
 	gpioServo(17, 1000);
-	time_sleep(1)
+	time_sleep(1);
 	
 	
 	gpioTerminate();
