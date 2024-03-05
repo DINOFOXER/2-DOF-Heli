@@ -19,15 +19,14 @@ int handle = 0;
 int16_t xDegree = 0;
 
 int main (){
+gpioInitialise();
+handle = i2cOpen(1, bno, 0); /* creating handle and starting communication with BNO */
+i2cWriteByteData(handle, 0x3B, 0x00); /* Units: m/s2, dps, degrees, Celsius */
+i2cWriteByteData(handle, 0x3D, 0x0C); /* activating NDOF mode */
+time_sleep(0.01); /* time needed to switch modes from CONFIG */
 
-	gpioInitialise();
-	handle = i2cOpen(1, bno, 0); /* creating handle and starting communication with BNO */
-  i2cWriteByteData(handle, 0x3B, 0x00); /* Units: m/s2, dps, degrees, Celsius */
-  i2cWriteByteData(handle, 0x3D, 0x0C); /* activating NDOF mode */
-  time_sleep(0.01); /* time needed to switch modes from CONFIG */
+i2cClose(handle);
+gpioTerminate();
 
-  i2cClose(handle);
-  gpioTerminate();
-
-  return 0;
+return 0;
 }
