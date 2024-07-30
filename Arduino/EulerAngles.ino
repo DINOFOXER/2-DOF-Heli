@@ -38,12 +38,6 @@ void setup() {
 }
 
 void loop() {
-/* Wire.beginTransmission(0x28);
- Wire.write(0x1F);
- Wire.endTransmission();
- Wire.requestFrom(0x28, 1);
- msb = Wire.read();*/
- 
  Wire.beginTransmission(0x28);
  Wire.write(0x1E);
  Wire.endTransmission();
