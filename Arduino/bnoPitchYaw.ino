@@ -10,14 +10,6 @@ uint8_t yaw_lsb;
 float pitchAngle;
 float yawAngle;
 
-/* PID variables */
-float pitchTarget, pitchError, pitchPrevError, pitchPrevIterm; /*target*/
-float yawTarget, yawError, yawPrevError, yawPrevIterm;;   /*Error*/
-
-float pTerm=0;
-float iTerm=0;
-float dTerm=0;
-
 unsigned long loopFreq;
 
 void setup() {
